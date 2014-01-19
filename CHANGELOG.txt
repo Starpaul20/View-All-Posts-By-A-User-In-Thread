@@ -1,0 +1,12 @@
+2.1.1
+- Optimization and general plugin updating
+
+2.1
+- Dropped MyBB 1.4 support
+- Added support for the "View own threads only" forum permission added in MyBB 1.6
+
+2.0
+- Updated plugin to work with MyBB 1.6
+
+1.0
+- Initial release
