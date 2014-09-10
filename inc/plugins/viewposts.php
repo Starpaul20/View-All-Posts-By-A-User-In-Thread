@@ -16,9 +16,12 @@ $plugins->add_hook("search_start", "viewposts_run");
 // The information that shows up on the plugin manager
 function viewposts_info()
 {
+	global $lang;
+	$lang->load("viewposts", true);
+
 	return array(
-		"name"				=> "View All Posts by a User in Thread",
-		"description"		=> "Allows users to search and view a specific user's posts within a specific thread.",
+		"name"				=> $lang->viewposts_info_name,
+		"description"		=> $lang->viewposts_info_desc,
 		"website"			=> "http://galaxiesrealm.com/index.php",
 		"author"			=> "Starpaul20",
 		"authorsite"		=> "http://galaxiesrealm.com/index.php",
