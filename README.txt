@@ -1,6 +1,6 @@
 ## INFORMATION ##
 
-View All Posts By A User In Thread (2.1.1) for MyBB 1.6
+View All Posts By A User In Thread (1.0) for MyBB 1.8
 Created by: Starpaul20
 Copyright: ©2010
 License: GPL
@@ -10,6 +10,8 @@ Allows users to view all the posts made by a specific user within a specific thr
 To use, just bring up the Who Posted? pop-up of the thread (which you may access by clicking the number of replies in forum view) and click the number next to the user you wish to view the posts of.
 
 This plugin offers full language support.
+
+The 'oldrelease' branch contains the 1.6 version of the plugin.
 
 
 ## INSTALLATION ##
