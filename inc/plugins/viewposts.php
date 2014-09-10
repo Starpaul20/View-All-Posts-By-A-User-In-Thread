@@ -52,13 +52,13 @@ function viewposts_run()
 
 	if($mybb->input['action'] == "findposts")
 	{
-		$where_sql = "tid='".intval($mybb->input['tid'])."'";
+		$where_sql = "tid='".$mybb->get_input('tid', 1)."'";
 		if(!$mybb->input['tid'])
 		{
 			error($lang->error_invalidsearch);
 		}
 
-		$where_sql .= " AND uid='".intval($mybb->input['uid'])."'";
+		$where_sql .= " AND uid='".$mybb->get_input('uid', 1)."'";
 		if(!$mybb->input['uid'])
 		{
 			error($lang->error_invalidsearch);
@@ -98,9 +98,9 @@ function viewposts_run()
 		);
 
 		// Do we have a hard search limit?
-		if($mybb->settings['searchhardlimit'] > 0)
+		if((int)$mybb->settings['searchhardlimit'] > 0)
 		{
-			$options['limit'] = intval($mybb->settings['searchhardlimit']);
+			$options['limit'] = (int)$mybb->settings['searchhardlimit'];
 		}
 
 		$pids = '';
@@ -115,10 +115,10 @@ function viewposts_run()
 		$sid = md5(uniqid(microtime(), 1));
 		$searcharray = array(
 			"sid" => $db->escape_string($sid),
-			"uid" => intval($mybb->user['uid']),
+			"uid" => (int)$mybb->user['uid'],
 			"dateline" => TIME_NOW,
-			"ipaddress" => $db->escape_string($session->ipaddress),
-			"threads" => $db->escape_string($mybb->input['tid']),
+			"ipaddress" => $db->escape_binary($session->packedip),
+			"threads" => (int)$mybb->input['tid'],
 			"posts" => $db->escape_string($pids),
 			"resulttype" => "posts",
 			"querycache" => $db->escape_string($where_sql),
