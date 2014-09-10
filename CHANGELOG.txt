@@ -3,15 +3,15 @@
 
 ## Version number reset for MyBB 1.8 ##
 
-2.1.1
+2.1.1 (October 24th, 2011)
 - Optimization and general plugin updating
 
-2.1
+2.1 (November 11th, 2010)
 - Dropped MyBB 1.4 support
 - Added support for the "View own threads only" forum permission added in MyBB 1.6
 
-2.0
+2.0 (August 5th, 2010)
 - Updated plugin to work with MyBB 1.6
 
-1.0
+1.0 (May 12th, 2010)
 - Initial release
