@@ -53,13 +53,13 @@ function viewposts_run()
 
 	if($mybb->input['action'] == "findposts")
 	{
-		$where_sql = "tid='".$mybb->get_input('tid', 1)."'";
+		$where_sql = "tid='".$mybb->get_input('tid', MyBB::INPUT_INT)."'";
 		if(!$mybb->input['tid'])
 		{
 			error($lang->error_invalidsearch);
 		}
 
-		$where_sql .= " AND uid='".$mybb->get_input('uid', 1)."'";
+		$where_sql .= " AND uid='".$mybb->get_input('uid', MyBB::INPUT_INT)."'";
 		if(!$mybb->input['uid'])
 		{
 			error($lang->error_invalidsearch);
@@ -119,7 +119,7 @@ function viewposts_run()
 			"uid" => (int)$mybb->user['uid'],
 			"dateline" => TIME_NOW,
 			"ipaddress" => $db->escape_binary($session->packedip),
-			"threads" => (int)$mybb->input['tid'],
+			"threads" => $mybb->get_input('tid', MyBB::INPUT_INT),
 			"posts" => $db->escape_string($pids),
 			"resulttype" => "posts",
 			"querycache" => $db->escape_string($where_sql),
