@@ -1,3 +1,7 @@
+1.0.1 (March 5th, 2015)
+- Changed (int)$mybb->input to $mybb->get_input
+- Updated other search queries
+
 1.0 (September 10th, 2014)
 - Updated plugin to work with MyBB 1.8
 
