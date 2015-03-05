@@ -79,7 +79,7 @@ function viewposts_run()
 
 		if(!empty($onlyusfids))	
 		{
-			$where_sql .= " AND (fid IN(".implode(',', $onlyusfids).") AND uid='{$mybb->user['uid']}')";
+			$where_sql .= "AND ((fid IN(".implode(',', $onlyusfids).") AND uid='{$mybb->user['uid']}') OR fid NOT IN(".implode(',', $onlyusfids)."))";
 		}
 
 		$unsearchforums = get_unsearchable_forums();
@@ -113,7 +113,7 @@ function viewposts_run()
 			$comma = ',';
 		}
 
-		$sid = md5(uniqid(microtime(), 1));
+		$sid = md5(uniqid(microtime(), true));
 		$searcharray = array(
 			"sid" => $db->escape_string($sid),
 			"uid" => (int)$mybb->user['uid'],
