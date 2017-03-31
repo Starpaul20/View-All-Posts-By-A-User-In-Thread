@@ -130,5 +130,3 @@ function viewposts_run()
 		redirect("search.php?action=results&sid=".$sid, $lang->redirect_searchresults);
 	}
 }
-
-?>
