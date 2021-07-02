@@ -34,14 +34,14 @@ function viewposts_info()
 // This function runs when the plugin is activated.
 function viewposts_activate()
 {
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("misc_whoposted_poster", "#".preg_quote('{$poster[\'posts\']}')."#i", '<a href="search.php?action=findposts&uid={$poster[\'uid\']}&tid={$tid}" onclick="opener.location=(\'search.php?action=findposts&uid={$poster[\'uid\']}&tid={$tid}\'); self.close();">{$poster[\'posts\']}</a>');
 }
 
 // This function runs when the plugin is deactivated.
 function viewposts_deactivate()
 {
-	include MYBB_ROOT."/inc/adminfunctions_templates.php";
+	require_once MYBB_ROOT."/inc/adminfunctions_templates.php";
 	find_replace_templatesets("misc_whoposted_poster", "#".preg_quote('<a href="search.php?action=findposts&uid={$poster[\'uid\']}&tid={$tid}" onclick="opener.location=(\'search.php?action=findposts&uid={$poster[\'uid\']}&tid={$tid}\'); self.close();">{$poster[\'posts\']}</a>')."#i", '{$poster[\'posts\']}', 0);
 }
 
